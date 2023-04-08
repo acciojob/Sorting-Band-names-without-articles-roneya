@@ -1,4 +1,3 @@
-
 let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
 
 function ra(arr) {
@@ -6,8 +5,8 @@ function ra(arr) {
 }
 
 touristSpots = touristSpots.sort((a, b) => {
-  const nameA = removeArticles(a);
-  const nameB = removeArticles(b);
+  const nameA = ra(a);
+  const nameB = ra(b);
   if (nameA < nameB) {
     return -1;
   } else if (nameA > nameB) {
@@ -15,5 +14,4 @@ touristSpots = touristSpots.sort((a, b) => {
   } else {
     return 0;
   }
-});
-
+}); 
