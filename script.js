@@ -1,11 +1,11 @@
 
-let bandNames = ["The Beatles", "Led Zeppelin", "Pink Floyd", "Aerosmith", "The Who"];
+let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
 
 function ra(arr) {
   return arr.replace(/^(a |an |the )/i, "").trim();
 }
 
-const sortedBandNames = bandNames.sort((a, b) => {
+touristSpots = touristSpots.sort((a, b) => {
   const nameA = removeArticles(a);
   const nameB = removeArticles(b);
   if (nameA < nameB) {
