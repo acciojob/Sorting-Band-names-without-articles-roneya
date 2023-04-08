@@ -1,22 +1,22 @@
-let bandNames = ["The abc", "a xyz", "An oprst", "the qwerty", "The mm", "A asd"];
+let nm = ["The abc", "a xyz", "An oprst", "the qwerty", "The mm", "A asd"];
 
-function removeArticle(bandName) {
+function removeArticle(nm) {
   let articles = ["a", "an", "the"];
-  let words = bandName.split(" ");
+  let words = nm.split(" ");
   if (articles.includes(words[0].toLowerCase())) {
     words.shift();
   }
   return words.join(" ");
 }
 
-bandNames.sort(function(a, b) {
+nm.sort(function(a, b) {
   return removeArticle(a).localeCompare(removeArticle(b));
 });
 
 let ulElement = document.getElementById("band");
 
-for (let i = 0; i < bandNames.length; i++) {
+for (let i = 0; i < nm.length; i++) {
   let liElement = document.createElement("li");
-  liElement.textContent = bandNames[i];
+  liElement.textContent = nm[i];
   ulElement.appendChild(liElement);
 }
