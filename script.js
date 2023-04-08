@@ -1,17 +1,22 @@
-let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
+let bandNames = ['The Beatles', 'Led Zeppelin', 'Pink Floyd', 'Aerosmith', 'The Who'];
 
-function ra(arr) {
-  return arr.replace(/^(a |an |the )/i, "").trim();
+function removeArticles(bandName) {
+  return bandName.replace(/^(a |an |the )/i, "").trim();
 }
 
-touristSpots = touristSpots.sort((a, b) => {
-  const nameA = ra(a);
-  const nameB = ra(b);
-  if (nameA < nameB) {
-    return -1;
-  } else if (nameA > nameB) {
-    return 1;
-  } else {
-    return 0;
-  }
-}); 
+bandNames = bandNames.sort((a, b) => {
+  const nameA = removeArticles(a);
+  const nameB = removeArticles(b);
+  return nameA.localeCompare(nameB);
+});
+
+const ul = document.createElement("ul");
+ul.setAttribute("id", "band");
+
+bandNames.forEach((bandName) => {
+  const li = document.createElement("li");
+  li.textContent = bandName;
+  ul.appendChild(li);
+});
+
+document.body.appendChild(ul);
